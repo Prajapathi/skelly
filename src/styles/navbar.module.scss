@@ -9,12 +9,16 @@
 
 .logo {
   margin: auto 25px;
-}
 
-.logo .icon {
-  font-size: 1.5vw;
-}
+  a {
+    text-decoration: none;
+    color: #000;
 
+    .icon {
+      font-size: 1.5vw;
+    }
+  }
+}
 .nav ul {
   list-style: none;
   display: flex;

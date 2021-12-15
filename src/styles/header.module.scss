@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 1.4vw;
+    font-weight: 400;
+    margin: 25px 20px;
+  }
+
+  .track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 40px;
+
+    .icon {
+      width: 2vw;
+      height: 2vw;
+      text-align: center;
+      font-size: 1vw;
+      line-height: 2vw;
+      border: 0.5px solid rgba(0, 0, 0, 0.507);
+      border-radius: 50%;
+    }
+
+    .selected {
+      background: rgba(7, 148, 7, 0.822);
+    }
+
+    .hr {
+      width: 4vw;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.137);
+      border-radius: 50%;
+    }
+  }
+}
