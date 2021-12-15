@@ -1,0 +1,40 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 0.2px solid rgba(0, 0, 0, 0.171); */
+  box-shadow: 0px 0.8px 0.4px rgba(0, 0, 0, 0.24);
+}
+
+.logo {
+  margin: auto 25px;
+}
+
+.logo .icon {
+  font-size: 1.5vw;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  margin: 20px 20px;
+}
+
+.utils {
+  margin: auto 15px;
+}
+
+.utils .menu {
+  font-size: 1.5vw;
+  margin: 20px 10px;
+  font-weight: 300;
+}
