@@ -16,14 +16,16 @@ const Header = () => {
             </div>
             <nav className={styles.nav}>
                 <ul>
-                    <li><a href="">Men</a></li>
-                    <li><a href="">Women</a></li>
-                    <li><a href="">Kids</a></li>
+                    <li><a href="/men">Men</a></li>
+                    <li><a href="/women">Women</a></li>
+                    <li><a href="/kids">Kids</a></li>
                 </ul>
             </nav>
             <div className={styles.utils}>
                 <FontAwesomeIcon className={styles.menu} icon={faSearch} />
+                &nbsp;
                 <FontAwesomeIcon className={styles.menu} icon={faShoppingCart} />
+                &nbsp;
                 <FontAwesomeIcon className={styles.menu} icon={faUser} />
             </div>
         </header>

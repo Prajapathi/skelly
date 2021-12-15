@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   /* border-bottom: 0.2px solid rgba(0, 0, 0, 0.171); */
-  box-shadow: 0px 0.8px 0.4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 0.2px 1.5px 0.2px rgba(0, 0, 0, 0.24);
 }
 
 .logo {
@@ -26,7 +26,9 @@
   display: inline-block;
   text-decoration: none;
   color: black;
-  margin: 20px 20px;
+  margin: 25px 20px;
+  font-size: 0.9vw;
+  font-weight: 500;
 }
 
 .utils {
