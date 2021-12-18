@@ -1,0 +1,236 @@
+$primary-green: #28a745;
+
+.container {
+  margin: 20px 40px;
+}
+.form_container {
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr;
+  grid-column-gap: 50px;
+}
+.ctas {
+  margin: 10px auto;
+}
+
+.cta {
+  padding: 12px 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  outline: 1px solid rgba(0, 0, 0, 0.507);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.selected {
+  background: $primary-green;
+  color: white;
+}
+
+.sidehead {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.shippingform {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-row-gap: 1rem;
+
+  input {
+    display: inline-block;
+    width: 250px;
+    border: 0.5px solid rgba(0, 0, 0, 0.486);
+    border-radius: 50px;
+    padding: 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    outline: none;
+  }
+}
+
+.payanddel {
+  width: 100%;
+  max-width: 360px;
+
+  h3 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 20px auto;
+  }
+
+  .payment,
+  .delivery {
+    width: auto;
+    display: grid;
+
+    label {
+      input[type="radio"] {
+        display: none;
+      }
+
+      .radiobtn {
+        outline: 1px solid rgba(0, 0, 0, 0.322);
+        overflow: hidden;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: outline 0.2s linear;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input[type="radio"]:checked ~ .radiobtn {
+        outline: 2px solid red;
+      }
+    }
+  }
+
+  .payment {
+    grid-template-columns: repeat(3, auto);
+    grid-row-gap: 5px;
+
+    .radiobtn {
+      display: inline-block;
+      width: 110px;
+      height: 40px;
+      border-radius: 50px;
+    }
+  }
+
+  .delivery {
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 7px;
+
+    .radiobtn {
+      width: 170px;
+      height: 50px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+
+      .deliverypic {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      div {
+        width: 50%;
+        height: 100%;
+        font-size: 1.1rem;
+        z-index: 10;
+        text-align: center;
+        font-weight: 600;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
+.cart {
+  .items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .item {
+      margin: 15px auto;
+
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-column-gap: 10px;
+
+      font-weight: 500;
+      font-size: 1.1rem;
+
+      place-items: center;
+
+      line-height: -moz-block-height;
+
+      .profile {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: white;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+        .id {
+          margin-top: 1em;
+          font-size: 0.5rem;
+          color: grey;
+          font-weight: 600;
+        }
+      }
+
+      .cost {
+        font-size: 0.9em;
+        text-align: center;
+        display: table;
+        height: inherit;
+
+        p {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .total {
+    text-align: center;
+    width: 95%;
+    background: rgb(223, 223, 223);
+    border-radius: 50px;
+    margin: 30px auto;
+    padding: 1rem;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .message {
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+}
+
+.submitbuttons {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  .cta {
+    margin-right: 30px;
+  }
+}
