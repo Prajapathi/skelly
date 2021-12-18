@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/form.module.scss';
 
 import paypal from '../assets/images/paypal.png'
@@ -20,26 +20,41 @@ import model1 from '../assets/images/profiles/model1.jpg'
 import model2 from '../assets/images/profiles/model2.jpg'
 
 const Login = () => {
+
+    const [log, setLog] = useState(true)
+    const [formData, setFormData] = useState({});
+
+    console.log({ formData });
+
+    const handlechange = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value })
+    }
+
+
+
+
     return (
         <div className={styles.container}>
             <form action="" className={styles.form}>
                 <div className={styles.form_container}>
                     <div>
                         <div className={styles.ctas}>
-                            <button type='button' className={`${styles.cta} ${styles.selected}`}>Log&nbsp;&nbsp;in</button>
+                            <button type='button' className={`${styles.cta} ${log && styles.selected}`}
+                                onClick={() => setLog(true)}>Log&nbsp;&nbsp;in</button>
                             &nbsp;&nbsp;&nbsp;
-                            <button type='button' className={styles.cta}>Sign&nbsp;&nbsp;up</button>
+                            <button type='button' className={`${styles.cta} ${!log && styles.selected}`}
+                                onClick={() => setLog(false)}>Sign&nbsp;&nbsp;up</button>
                         </div>
                         <span className={styles.sidehead}>Shipping information</span>
                         <div className={styles.shippingform}>
-                            <input type="text" name='email' placeholder='Email' />
-                            <input type="text" name='address' placeholder='Address' />
-                            <input type="text" name='firstname' placeholder='First Name' />
-                            <input type="text" name='city' placeholder='City' />
-                            <input type="text" name='lastname' placeholder='Last Name' />
-                            <input type="text" name='zip' placeholder='Postal Code / ZIP' />
-                            <input type="text" name='phone' placeholder='Phone Number' />
-                            <input type="text" name='country' list='countries' value='Poland' />
+                            <input type="email" name='email' placeholder='Email' value={formData.email} onChange={handlechange} required />
+                            <input type="text" name='address' placeholder='Address' value={formData.address} onChange={handlechange} required />
+                            <input type="text" name='firstname' placeholder='First Name' value={formData.firstname} onChange={handlechange} required />
+                            <input type="text" name='city' placeholder='City' value={formData.city} onChange={handlechange} required />
+                            <input type="text" name='lastname' placeholder='Last Name' value={formData.lastname} onChange={handlechange} required />
+                            <input type="text" name='zip' placeholder='Postal Code / ZIP' value={formData.zip} onChange={handlechange} required />
+                            <input type="text" name='phone' placeholder='Phone Number' value={formData.phone} onChange={handlechange} required />
+                            <input type="text" name='country' list='countries' value={formData.country} onChange={handlechange} required />
                             <datalist id="countries">
                                 <option value="Poland" />
                                 <option value="Germany" />
@@ -56,39 +71,39 @@ const Login = () => {
                         <h3>Payment Method</h3>
                         <div className={styles.payment}>
                             <label htmlFor="Paypal" className={styles.label}>
-                                <input type="radio" name="pay" id="Paypal" value='paypal' />
+                                <input type="radio" name="pay" id="Paypal" value='paypal' onChange={handlechange} required />
                                 <div
                                     className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${paypal})` }}>
                                 </div>
                             </label>
                             <label htmlFor="Visa" className={styles.label}>
-                                <input type="radio" name="pay" id="Visa" value='visa' />
+                                <input type="radio" name="pay" id="Visa" value='visa' onChange={handlechange} required />
                                 <div
                                     className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${visa})` }}>
                                 </div>
                             </label>
                             <label htmlFor="Mastercard" className={styles.label}>
-                                <input type="radio" name="pay" id="Mastercard" value='mastercard' />
+                                <input type="radio" name="pay" id="Mastercard" value='mastercard' onChange={handlechange} required />
                                 <div className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${mastercard})` }}>
                                 </div>
                             </label>
                             <label htmlFor="Maestro" className={styles.label}>
-                                <input type="radio" name="pay" id="Maestro" value='maestro' />
+                                <input type="radio" name="pay" id="Maestro" value='maestro' onChange={handlechange} required />
                                 <div className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${maestro})` }}>
                                 </div>
                             </label>
                             <label htmlFor="Discover" className={styles.label}>
-                                <input type="radio" name="pay" id="Discover" value='discover' />
+                                <input type="radio" name="pay" id="Discover" value='discover' onChange={handlechange} required />
                                 <div className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${discover})` }}>
                                 </div>
                             </label>
                             <label htmlFor="Ideal" className={styles.label}>
-                                <input type="radio" name="pay" id="Ideal" value='ideal' />
+                                <input type="radio" name="pay" id="Ideal" value='ideal' onChange={handlechange} required />
                                 <div className={styles.radiobtn}
                                     style={{ backgroundImage: `url(${ideal})` }}>
                                 </div>
@@ -100,7 +115,7 @@ const Login = () => {
                         <h3>Delivery Method</h3>
                         <div className={styles.delivery}>
                             <label htmlFor="inpost" className={styles.label}>
-                                <input type="radio" name="pay" id="inpost" value='inpost' />
+                                <input type="radio" name="delivery" id="inpost" value='inpost' onChange={handlechange} required />
                                 <div className={styles.radiobtn}>
                                     <div style={{ backgroundImage: `url(${inpost})` }}
                                         className={styles.deliverypic}></div>
@@ -110,7 +125,7 @@ const Login = () => {
                                 </div>
                             </label>
                             <label htmlFor="dpd" className={styles.label}>
-                                <input type="radio" name="pay" id="dpd" value='dpd' />
+                                <input type="radio" name="delivery" id="dpd" value='dpd' onChange={handlechange} required />
                                 <div className={styles.radiobtn}>
                                     <div style={{ backgroundImage: `url(${dpd})` }}
                                         className={styles.deliverypic}></div>
@@ -120,7 +135,7 @@ const Login = () => {
                                 </div>
                             </label>
                             <label htmlFor="dhl" className={styles.label}>
-                                <input type="radio" name="pay" id="dhl" value='dhl' />
+                                <input type="radio" name="delivery" id="dhl" value='dhl' onChange={handlechange} required />
                                 <div className={styles.radiobtn}>
                                     <div style={{ backgroundImage: `url(${dhl})` }}
                                         className={styles.deliverypic}></div>
@@ -130,7 +145,7 @@ const Login = () => {
                                 </div>
                             </label>
                             <label htmlFor="fedex" className={styles.label}>
-                                <input type="radio" name="pay" id="fedex" value='fedex' />
+                                <input type="radio" name="delivery" id="fedex" value='fedex' onChange={handlechange} required />
                                 <div className={styles.radiobtn}>
                                     <div style={{ backgroundImage: `url(${fedex})` }}
                                         className={styles.deliverypic}></div>

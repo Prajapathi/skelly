@@ -8,6 +8,10 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 const Navbar = () => {
+
+
+    document.title = "Skelly"
+
     return (
         <div className={styles.header}>
             <div className={styles.logo}>
