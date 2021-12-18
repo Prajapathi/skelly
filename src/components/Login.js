@@ -54,12 +54,11 @@ const Login = () => {
                             <input type="text" name='lastname' placeholder='Last Name' value={formData.lastname} onChange={handlechange} required />
                             <input type="text" name='zip' placeholder='Postal Code / ZIP' value={formData.zip} onChange={handlechange} required />
                             <input type="text" name='phone' placeholder='Phone Number' value={formData.phone} onChange={handlechange} required />
-                            <input type="text" name='country' list='countries' value={formData.country} onChange={handlechange} required />
-                            <datalist id="countries">
-                                <option value="Poland" />
-                                <option value="Germany" />
-                                <option value="Austria" />
-                            </datalist>
+                            <select name='country' list='countries' value={formData.country} onChange={handlechange} required>
+                                <option value="Poland">Poland</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Austria">Austria</option>
+                            </select>
                         </div>
                     </div>
 
